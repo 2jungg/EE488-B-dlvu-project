@@ -46,7 +46,7 @@ parser.add_argument('--nClasses',       type=int,   default=9500,   help='Number
 
 ## Load and save
 parser.add_argument('--initial_model',  type=str,   default="",     help='Initial model weights, otherwise initialise with random weights');
-parser.add_argument('--save_path',      type=str,   default="exps/exp1", help='Path for model and logs');
+parser.add_argument('--save_path',      type=str,   default="exps/exp02", help='Path for model and logs');
 
 ## Training and evaluation data
 parser.add_argument('--train_path',     type=str,   default="/mnt/home/joonson/ee488_24_data/train1",   help='Absolute path to the train set');
@@ -126,7 +126,7 @@ def main_worker(args):
     trainer     = ModelTrainer(model, **vars(args))
 
     ## Load model weights
-    modelfiles = glob.glob('{}/epoch0*.model'.format(args.save_path))
+    modelfiles = glob.glob('{}'.format(args.initial_model))
     modelfiles.sort()
 
     for modelfile in modelfiles:

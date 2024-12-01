@@ -49,10 +49,10 @@ parser.add_argument('--initial_model',  type=str,   default="",     help='Initia
 parser.add_argument('--save_path',      type=str,   default="exps/exp1", help='Path for model and logs');
 
 ## Training and evaluation data
-parser.add_argument('--train_path',     type=str,   default="data/train",   help='Absolute path to the train set');
+parser.add_argument('--train_path',     type=str,   default="/mnt/home/joonson/ee488_24_data/train2",   help='Absolute path to the train set');
 parser.add_argument('--train_ext',      type=str,   default="jpg",  help='Training files extension');
-parser.add_argument('--test_path',      type=str,   default="data/val",     help='Absolute path to the test set');
-parser.add_argument('--test_list',      type=str,   default="data/val_pairs.csv",   help='Evaluation list');
+parser.add_argument('--test_path',      type=str,   default="/mnt/home/joonson/ee488_24_data/val",     help='Absolute path to the test set');
+parser.add_argument('--test_list',      type=str,   default="/mnt/home/joonson/ee488_24_data/val_pairs.csv",   help='Evaluation list');
 
 ## Model definition
 parser.add_argument('--model',          type=str,   default="ResNet18", help='Name of model definition');
@@ -63,7 +63,7 @@ parser.add_argument('--eval',           dest='eval', action='store_true',   help
 parser.add_argument('--output',         type=str,   default="",     help='Save a log of output to this file name');
 
 ## Training
-parser.add_argument('--gpu',            type=int,   default=9,      help='GPU index');
+parser.add_argument('--gpu',            type=int,   default=2,      help='GPU index');
 
 args = parser.parse_args();
 
